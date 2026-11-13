@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/realisations",
-      "destination": "./HTML/realisations.html"
+      "destination": "/HTML/realisations.html"
     }
   ]
 }
