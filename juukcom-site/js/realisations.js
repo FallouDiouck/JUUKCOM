@@ -8,7 +8,7 @@ const photos = [
   { src: "../image/affiche4.jpeg", alt: "Mahuuz", cat: "affiches" },
   { src: "../image/affiche5.jpeg", alt: "Journee Qassida", cat: "affiches" },
   { src: "../image/cartes.jpg", alt: "Cartes de visite", cat: "cartes" },
-  { src: "../image/badge.jpeg", alt: "Badge personnalisé", cat: "textile" },
+  { src: "../image/Badge.jpeg", alt: "Badge personnalisé", cat: "textile" },
   { src: "../image/carnet.jpeg", alt: "Carnet personnalisé", cat: "cartes" },
   { src: "../image/flyers.jpeg", alt: "Flyers", cat: "cartes" },
   { src: "../image/etiquette.jpeg", alt: "Étiquette personnalisée", cat: "cartes" },
