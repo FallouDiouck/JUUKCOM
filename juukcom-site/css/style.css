@@ -103,7 +103,7 @@ header {
 }
 
 .nav a.l:hover {
-    color: var(--t)
+    color: var(--k)
 }
 
 
@@ -115,6 +115,7 @@ header {
 .sp {
     flex: 1
 }
+
 
 .btn {
     display: inline-flex;
@@ -134,6 +135,12 @@ header {
 .btn.o {
     background: none;
     color: #fff;
+    border-color: #ffffff80;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn.o:hover {
+    background: #ffffff10;
     border-color: #ffffff80
 }
 
@@ -295,6 +302,23 @@ header {
     font-size: 16px
 }
 
+.sv div {
+    display: flex;
+    flex-direction: column
+}
+
+.sv a {
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--k);
+    font-weight: 600;
+    text-decoration: none
+}
+
+.sv a:hover {
+    text-decoration: underline
+}
+
 .g {
     columns: 3 260px;
     gap: 16px
@@ -417,8 +441,92 @@ textarea:focus {
 footer {
     background: var(--b);
     color: #fff;
+    padding: 64px 24px 0
+}
+
+.ft {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #ffffff2e
+}
+
+.ft img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 4px;
+    margin-bottom: 16px
+}
+
+.ft h3 {
+    font-size: 16px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--y);
+    margin-bottom: 16px
+}
+
+.ft p {
+    color: #d7defa;
+    font-size: 16px;
+    margin-bottom: 10px
+}
+
+.ft a {
+    display: block;
+    color: #d7defa;
+    text-decoration: none;
+    margin-bottom: 10px
+}
+
+.ft a:hover {
+    color: var(--y)
+}
+
+.ft i {
+    color: var(--y);
+    margin-right: 8px
+}
+
+.rs {
+    display: flex;
+    gap: 14px;
+    margin-top: 18px
+}
+
+.ft .rs a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ffffff40;
+    border-radius: 50%;
+    font-size: 18px;
+    margin: 0
+}
+
+.ft .rs i {
+    margin: 0;
+    color: inherit
+}
+
+.cp {
     text-align: center;
-    padding: 32px 24px
+    padding: 20px 0;
+    font-size: 14px;
+    color: #aab6e6;
+    margin: 0
+}
+
+@media (max-width:820px) {
+    .ft {
+        grid-template-columns: 1fr;
+        gap: 32px
+    }
 }
 
 @media (max-width:820px) {
@@ -448,14 +556,18 @@ footer {
     font-weight: 600;
     margin-bottom: 16px;
     padding: 20px 20px;
-    border:var(--l) solid 1px;
-    transition: all 0.2s ease-in-out;
+    border: var(--l) solid 1px;
     border-radius: 8px;
 }
 
-.co:hover {
+.co.e {
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.co.e:hover {
     color: var(--t);
-    border:var(--y) solid 2px;
+    border: var(--y) solid 2px;
 }
 
 .icon {
@@ -463,6 +575,108 @@ footer {
 }
 
 
-.js .reveal{opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease}
-.js .reveal.visible{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+.js .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .6s ease, transform .6s ease
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none
+    }
+}
+
+.f {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px
+}
+
+.f button {
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid var(--l);
+    border-radius: 999px;
+    background: none;
+    color: var(--t);
+    font: 500 15px 'Instrument Sans', sans-serif;
+    cursor: pointer
+}
+
+.f button.on {
+    background: var(--y);
+    border-color: var(--y);
+    color: #0b1b4a
+}
+
+
+.btn__float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--y);
+    color: #0b1b4a;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    z-index: 99;
+    transition: 0.3s;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+.btn__float.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.btn__float:hover {
+    transform: scale(1.05);
+}
+
+.g {
+    transition: opacity .2s ease
+}
+
+.g.sortie {
+    opacity: 0
+}
+
+.g img {
+    animation: apparait .5s ease backwards
+}
+
+@keyframes apparait {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(.97)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    .g,
+    .g img {
+        animation: none;
+        transition: none
+    }
+}

@@ -50,19 +50,23 @@
                     <h3>Textile & goodies</h3>
                     <p>Vos visuels imprimés sur t-shirts, sweats, tote bags, mugs, carnets… Du tirage unique à la série,
                         toujours soigné.</p>
+                    <a href="./HTML/realisations.html?cat=textile">Voir les réalisations </a>
                 </div>
                 <div><b>02</b>
                     <h3>Tableaux muraux</h3>
                     <p>Sérigraphie sur papier ou sur toile, en séries limitées, avec des encres durables.</p>
+                    <a href="./HTML/realisations.html?cat=tableaux">Voir les réalisations </a>
                 </div>
                 <div><b>03</b>
                     <h3>Affiches</h3>
                     <p>Des affiches au rendu fort et durable pour vos événements, campagnes et lancements de produits.
                     </p>
+                    <a href="./HTML/realisations.html?cat=affiches">Voir les réalisations </a>
                 </div>
                 <div><b>04</b>
-                    <h3>Cartes de visite</h3>
+                    <h3>Cartes de visite & Papeterie</h3>
                     <p>Des cartes résistantes et élégantes pour les créatifs, artisans et marques indépendantes.</p>
+                    <a href="./HTML/realisations.html?cat=cartes">Voir les réalisations </a>
                 </div>
             </div>
         </section>
@@ -77,11 +81,12 @@
                         alt="Mug personnalisé"><img src="image/affiche12.jpg" alt="Visuel de campagne"><img
                         src="image/lacoste2.jpg" alt="Polos brodés"><img src="image/affiche7.jpg" alt="Affiche"><img
                         src="image/affiche3.jpg" alt="Affiche">
+                        <p style="text-align:center;margin-top:32px"><a class="btn" href="./HTML/realisations.html">Voir les réalisations</a></p>
                 </div>
             </div>
         </section>
         <section class="w" id="apropos">
-            <div class="ab"><img src="image/profil.jpg" alt="Khadim Rassoul Diouck">
+            <div class="ab"><img src="image/profile2.jpg" alt="Khadim Rassoul Diouck">
                 <div>
                     <p class="k">À propos</p>
                     <div class="n">Khadim Rassoul Diouck</div>
@@ -111,10 +116,10 @@
                         <h2>Parlons de votre projet</h2>
                         <p>Décrivez-nous votre commande, nous vous répondons rapidement.</p>
                         <p class="co"><i class="icon" data-lucide="phone"></i>78 135 31 77</p>
-                        <a href="https://mail.google.com/mail/u/0/#search/diouckkhadim0%40gmail.com?compose=new"><p class="co"><i class="icon" data-lucide="mail"></i>diouckkhadim0@gmail.com</p></a>
+                        <a href="https://mail.google.com/mail/u/0/#search/diouckkhadim0%40gmail.com?compose=new"><p class="co e"><i class="icon" data-lucide="mail"></i>diouckkhadim0@gmail.com</p></a>
                         <p class="co"><i class="icon" data-lucide="map-pin"></i>Malika, Dakar</p>
                     </div>
-                    <form action="https://formspree.io/f/mwlljrnl" method="POST">
+                    <form action="https://formspree.io/f/xkjjaprl" method="POST">
                         <div class="two">
                             <div><label for="n">Nom</label><input id="n" name="nom" required></div>
                             <div><label for="p">Prénom</label><input id="p" name="prenom" required></div>
@@ -126,8 +131,41 @@
                 </div>
             </div>
         </section>
+        <a href="#hero" class="btn__float" >
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
     </main>
-    <footer>© <span id="y">2026</span> JUUKcom — Communiquer autrement</footer>
+    <footer>
+  <div class="ft">
+    <div>
+      <img src="image/logo.png" alt="Logo JUUKcom">
+      <p>Impression numérique et sérigraphie à Dakar. Des supports soignés, du tirage unique à la série.</p>
+    </div>
+
+    <div>
+      <h3>Navigation</h3>
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p><i class="fa-solid fa-phone"></i> +221 78 135 31 77</p>
+      <p><i class="fa-regular fa-envelope"></i> diouckkhadim0@gmail.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> Malika, Dakar</p>
+      <div class="rs">
+        <a href="https://www.instagram.com/rassoul_diouck?psln=MW0xenRqNHZvbGw3dw==" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@juukcom_graphiste?_r=1&_t=ZS-9BGe9m5EWUa" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/message/MLPVAU33QZKRP1" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <p class="cp">© <span id="y">2026</span> JUUKcom — Communiquer autrement</p>
+</footer>
     <script>document.getElementById('y').textContent = new Date().getFullYear()
         document.documentElement.classList.add('js')
 
@@ -178,7 +216,24 @@
 
     sections.forEach(section => scrollspy.observe(section))
 
-        })</script>
+        })
+        
+        const btnFloat = document.querySelector('.btn__float');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnFloat.classList.add('show');
+            } else {
+                btnFloat.classList.remove('show');
+            }
+        });
+        btnFloat.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        </script>
     <script src="https://unpkg.com/lucide@0.469.0"></script>
     <script>lucide.createIcons()</script>
 </body>
